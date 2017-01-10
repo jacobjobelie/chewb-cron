@@ -12,7 +12,6 @@ const CRON = function() {
   function _upload() {
     return Google.upload(path.join(process.cwd(), PATH), 'gs://samrad-chewb', true)
     .then(()=>{
-      console.log("Uplaoded");
       return true
     })
     .catch((err)=>{
