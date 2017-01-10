@@ -16,7 +16,6 @@ const CRON = function() {
       return true
     })
     .catch((err)=>{
-      console.log(err);
       return err
     })
   }
@@ -26,12 +25,11 @@ const CRON = function() {
     return redisApi.hgetAll('chewb:videos')
       .then(allVideos => {
 
-        const dupe = Object.assign({}, allVideos)
         return Q.map(Object.keys(allVideos),
           (key => {
             return redisApi.hmget(allVideos[key], key)
-              .then(data => {
-                dupe[key] = data
+              .then(data => {]
+                return data
                 return dupe[key]
               })
           }), {
