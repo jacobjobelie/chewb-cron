@@ -18,8 +18,9 @@
   "homepage": "",
   "devDependencies": {},
   "dependencies": {
-    "@samelie/chewb-redis":"git://github.com/samradical/chewb-redis.git#master",
-    "@samelie/google-cloudstorage":"git://github.com/samradical/google-cloudstorage.git#master",
-    "bluebird": "^3.4.7"
+    "@samelie/chewb-redis": "git://github.com/samradical/chewb-redis.git#master",
+    "@samelie/google-cloudstorage": "git://github.com/samradical/google-cloudstorage.git#master",
+    "bluebird": "^3.4.7",
+    "colors": "^1.1.2"
   }
 }
