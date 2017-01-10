@@ -41,9 +41,13 @@ const CRON = function() {
           })
       })
       .then(all => {
-        fs.writeFileSync(`${PATH}/chewb-recent.json`, JSON.stringify(all.slice(0, MAX_RECENT)))
-        fs.writeFileSync(`${PATH}/chewb-all.json`, JSON.stringify(all))
-        return _upload()
+        if(all){
+          fs.writeFileSync(`${PATH}/chewb-recent.json`, JSON.stringify(all.slice(0, MAX_RECENT)))
+          fs.writeFileSync(`${PATH}/chewb-all.json`, JSON.stringify(all))
+          return _upload()
+        }else{
+          return Q.resolve()
+        }
       })
   }
 
