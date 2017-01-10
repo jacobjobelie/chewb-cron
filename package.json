@@ -1,0 +1,25 @@
+{
+  "name": "chewb-cron",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Samuel Elie <samradelie@gmail.com>",
+  "main": "main.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {},
+  "dependencies": {
+    "@samelie/chewb-redis":"git://github.com/samradical/chewb-redis.git#master",
+    "@samelie/google-cloudstorage":"git://github.com/samradical/google-cloudstorage.git#master",
+    "bluebird": "^3.4.7"
+  }
+}
