@@ -23,7 +23,9 @@ const CRON = function() {
 
     return redisApi.hgetAll('chewb:videos')
       .then(allVideos => {
-
+        if(!allVideos){
+          return Q.resolve()
+        }
         return Q.map(Object.keys(allVideos),
           (key => {
             return redisApi.hmget(allVideos[key], key)
