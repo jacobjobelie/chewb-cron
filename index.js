@@ -27,9 +27,8 @@ const CRON = function() {
         return Q.map(Object.keys(allVideos),
           (key => {
             return redisApi.hmget(allVideos[key], key)
-              .then(data => {]
+              .then(data => {
                 return data
-                return dupe[key]
               })
           }), {
             concurrency: 10
