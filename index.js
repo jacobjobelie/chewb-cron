@@ -26,7 +26,11 @@ const CRON = function() {
         if(!allVideos){
           return Q.resolve()
         }
-        return Q.map(Object.keys(allVideos),
+        const keys = Object.keys(allVideos) || []
+        if (!keys.length){
+          return Q.resolve()
+        }
+        return Q.map(keys,
           (key => {
             return redisApi.hmget(allVideos[key], key)
               .then(data => {
