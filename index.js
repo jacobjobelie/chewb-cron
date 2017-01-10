@@ -64,7 +64,7 @@ function run(){
 
 setInterval(()=>{
   run()
-}, 10000 * 60)
+}, 5000 * 60)
 
 
 if(!fs.existsSync(PATH)){
