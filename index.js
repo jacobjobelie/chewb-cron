@@ -21,25 +21,7 @@ const CRON = function() {
 
   function start() {
 
-    return redisApi.hgetAll('chewb:videos')
-      .then(allVideos => {
-        if(!allVideos){
-          return Q.resolve()
-        }
-        const keys = Object.keys(allVideos) || []
-        if (!keys.length){
-          return Q.resolve()
-        }
-        return Q.map(keys,
-          (key => {
-            return redisApi.hmget(allVideos[key], key)
-              .then(data => {
-                return data
-              })
-          }), {
-            concurrency: 10
-          })
-      })
+    return redisApi.smembers('deux-tube')
       .then(all => {
         if(all){
           fs.writeFileSync(`${PATH}/chewb-recent.json`, JSON.stringify(all.slice(0, MAX_RECENT)))
